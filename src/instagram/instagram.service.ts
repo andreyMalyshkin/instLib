@@ -29,7 +29,7 @@ export class InstagramService {
     } catch (error) {
       if (error.name === 'IgCheckpointError') {
         console.log(`Challenge required for ${account.username}. Attempting to solve...`);
-        await ig.challenge.auto(true); // Попробуем автоматически обработать проверку
+        await ig.challenge.auto(true);
 
         console.log(`Challenge solved. Please verify on your Instagram account.`);
       } else {
@@ -105,6 +105,6 @@ export class InstagramService {
       throw new Error(`User ${username} not found`);
     }
     console.log(`Successfully found userId for ${username}: ${user.pk}`);
-    return user.pk.toString(); // pk - это userId в API
+    return user.pk.toString();
   }
 }
